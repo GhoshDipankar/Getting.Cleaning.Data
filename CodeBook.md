@@ -25,8 +25,16 @@ In that case, the first part of the R script "Downloading and unzipping data fil
 7. y_train.txt           : List of Training Activitiy Labels  
 8. X_train.txt           : Data for all the activites for all features 
                            performed by all Training Subject IDs  
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 ## Packages used:
-1.dplyr   
-2.reshape2   
+Since the following packages are used in the R script, if they are not installed, then they must be downloaded from Cran site. 
+1. dplyr   
+2. reshape2 
+
+## Methodology:
+The raw data sets are converted into a tidy data set by the R script "run_analysis.R" through the following steps.  
+### Downloading and unzipping data files:
+The data sets are downloaded from the give website and unzipped.  
+### Reading of data from the folders:  
+- "activitiy_labels" - Reading of 6 activitiy labels and corresponding names like "Walking", "Standing" etc  
+- measurements - Reading of the list of all features    
+
