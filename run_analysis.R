@@ -108,5 +108,5 @@
 # Estimating Mean of each variable for each Activity and each Subject:
   tidy_set <- dcast(molten_data, SubjectID+Activity ~ variable, mean)
 # Writing the tidy data set in a file called "tidyData.txt":
-  write.table(tidy_set, "tidyData.txt")
+  write.table(tidy_set, "tidyData.txt", row.names = FALSE)
 # #############################################################################
