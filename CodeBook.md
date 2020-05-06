@@ -1,5 +1,5 @@
 # Code Book corresponding to the Getting and Cleaning Data Course Assignment Project
- This Code Book overviews the data sets used in this project and the guides the process through which a tidy data set can be obtained from the given data sets. 
+This Code Book overviews the data sets used in this project and the guides the process through which a tidy data set can be obtained from the given data sets. 
 
 ## Overview:
 Human Activity Recognition Using Smartphones Datasets are prepared through experiments with a group of 30 volunteers within an age bracket of 19-48 years.  
@@ -60,7 +60,7 @@ Since only the measurements on the mean and standard deviation for each measurem
 - "TimeBodyGyroscopeJerk"  
 - "FrequencyBodyAccelerometer"  
 - "FrequencyBodyAccelerometerJerk"  
-- "FrequencyBodyGyroscope"  
+- "FrequencyBodyGyroscope"   
 Total 48 measurements
 #### For each of the following signals 2 measurements for Mean and Standard deviation making a total of 2 measurements for each signal:  
 - "TimeBodyAccelerometerMagnitude"  
@@ -74,3 +74,12 @@ Total 48 measurements
 Total 16 measurements.  
 Therefore, total 48+16 = 66 measurements are to be considered when only the measurements on the mean and standard deviation are extracted.  
 With the help of gsub() and grep() commands, the dataset "selectedData" is prepared which containes only the measurements on the mean and standard deviation.  
+
+### Labeling the data set appropriately with descriptive measurement names:  
+Short measurement names are renamed into their description names by gsub() so that "t", "f", "Acc", "Gyro", "Mag" are renamed as "Time", "Frequency", "Accelerometer", "Gyroscope", "Magnitude" respectively.  
+Column names are added to the selected dataset.  
+Columns corresponding to Subject IDs and Activity labels are also added to the selected data set "selectedData".  
+
+### Giving descriptive activity names to name the activities in the data set:
+Different activity names that are already read from file as "activitiy_labels" are used to replace activity labels with the corresponding names.  
+
