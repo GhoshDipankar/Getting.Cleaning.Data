@@ -83,3 +83,7 @@ Columns corresponding to Subject IDs and Activity labels are also added to the s
 ### Giving descriptive activity names to name the activities in the data set:
 Different activity names that are already read from file as "activitiy_labels" are used to replace activity labels with the corresponding names.  
 
+### Creation of an independent tidy data set with the mean of each variable for each activity and each subject  
+- The selected data set "selectedData" is converted into a molten data frame called "molten_data" by the use of melt() of the package "reshape2".  
+- Mean of each variable for each Activity and each Subject is estimated by dcast() and stored in a data frame called "tidy_set".  
+- The tidy data set is written in a file called "tidyData.txt"
