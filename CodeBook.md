@@ -50,3 +50,27 @@ Test and Training data sets are combined into a single data set.
 - subject           : Combined Test and Training Subject IDs  
 - activity          : Combined list of Activitiy Labels  
 - data              : Combined activites for all measurements performed by all Test and Training Subject IDs  
+### Extraction of only the measurements on the mean and standard deviation for each measurement:  
+Since only the measurements on the mean and standard deviation for each measurement are to be extracted, total number of measurements are 66 as given by:    
+#### For each of the following signals 2 measurements for Mean and Standard deviation for each X, Y & Z making a total of 6 measurements for each signal:
+- "TimeBodyAccelerometer"        
+- "TimeGravityAccelerometer"  
+- "TimeBodyAccelerometerJerk"  
+- "TimeBodyGyroscope"  
+- "TimeBodyGyroscopeJerk"  
+- "FrequencyBodyAccelerometer"  
+- "FrequencyBodyAccelerometerJerk"  
+- "FrequencyBodyGyroscope"  
+Total 48 measurements
+#### For each of the following signals 2 measurements for Mean and Standard deviation making a total of 2 measurements for each signal:  
+- "TimeBodyAccelerometerMagnitude"  
+- "TimeGravityAccelerometerMagnitude"  
+- "TimeBodyAccelerometerJerkMagnitude"  
+- "TimeBodyGyroscopeMagnitude"  
+- "FrequencyBodyAccelerometerMagnitude"  
+- "FrequencyBodyAccelerometerJerkMagnitude"  
+- "FrequencyBodyGyroscopeMagnitude"  
+- "FrequencyBodyGyroscopeJerkMagnitude"  
+Total 16 measurements.  
+Therefore, total 48+16 = 66 measurements are to be considered when only the measurements on the mean and standard deviation are extracted.  
+With the help of gsub() and grep() commands, the dataset "selectedData" is prepared which containes only the measurements on the mean and standard deviation.  
