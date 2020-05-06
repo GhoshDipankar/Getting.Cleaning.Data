@@ -32,7 +32,7 @@
 #
 # Reading of 6 activitiy labels and corresponding names like "Walking", "Standing" etc:    
   activitiy_labels <- read.table("UCI HAR Dataset/activity_labels.txt")
-# Reading of the list of all features:
+# Reading of the list of all measurements:
   measurements <- read.table("UCI HAR Dataset/features.txt")[,2]
 #
 # Use of Test Set:
@@ -40,7 +40,7 @@
   subject_test <- read.table("UCI HAR Dataset/test/subject_test.txt")  
 # List of Activitiy Labels:  
   activity_test <- read.table("UCI HAR Dataset/test/y_test.txt")   # Test Labels
-# Data for all the activites for all features performed by all Test Subject IDs:
+# Data for all the activites for all measurements performed by all Test Subject IDs:
   x_test <- read.table("UCI HAR Dataset/test/X_test.txt")   
 #
 # Use of Training Set:
@@ -48,7 +48,7 @@
   subject_train <- read.table("UCI HAR Dataset/train/subject_train.txt")
 # List of Activitiy Labels:
   activity_train <- read.table("UCI HAR Dataset/train/y_train.txt")
-# Data for all the activites for all features performed by all Training Subject IDs:  
+# Data for all the activites for all measurements performed by all Training Subject IDs:  
   x_train <- read.table("UCI HAR Dataset/train/X_train.txt")
 #
 # % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -62,7 +62,7 @@
   activity <- rbind(activity_test, activity_train)
 # Adding Column Name as "Activity" 
   names(activity) <- "Activity"
-# Combining of all the activites for all features performed by 
+# Combining of all the activites for all measurements performed by 
 #     all Test and Training Subject IDs:
   data <- rbind(x_test, x_train)  
 #
@@ -81,7 +81,7 @@
   selectedData <- data[, mean_std_measurements]
 #
 # % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-# 4. Labelling the data set appropriately with descriptive measurement names:
+# 4. Labeling the data set appropriately with descriptive measurement names:
   selectedMeasurementsNames <- 
       selectedMeasurementsNames %>%
       gsub("^t", "Time", .) %>%                # Renaming t to Time
@@ -101,13 +101,12 @@
   selectedData$Activity <- factor(selectedData$Activity, labels = activitiy_labels[,2])
 #
 # % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-# 6. Creation of a second, independent tidy data set with the average of 
+# 6. Creation of an independent tidy data set with the average of 
 #                    each variable for each activity and each subject:
 # Converting selectedData into a molten data frame called molten_data:
   molten_data <- melt(selectedData, id = c("SubjectID", "Activity"))
-# Estimating Mean of each variable for ach Activity and each Subject:
+# Estimating Mean of each variable for each Activity and each Subject:
   tidy_set <- dcast(molten_data, SubjectID+Activity ~ variable, mean)
-# Writing the tidy data set into a file called "tidyData":
-  write.table(tidy_set, "tidyData")
-# #############################################################################
+# Writing the tidy data set in a file called "tidyData.txt":
+  write.table(tidy_set, "tidyData.txt")
 # #############################################################################
