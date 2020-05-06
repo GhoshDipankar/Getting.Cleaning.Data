@@ -44,3 +44,9 @@ The data sets are downloaded from the give website and unzipped.
 - subject_train     : List of Training Subject ID who performed the activities  
 - activity_train    : List of Training Activitiy Labels  
 - x_train           : Data for all activites for all measurements performed by all Training Subject IDs 
+
+### Preparation of combined data from Test and Training Data Sets:  
+Test and Training data sets are combined into a single data set.  
+- subject           : Combined Test and Training Subject IDs  
+- activity          : Combined list of Activitiy Labels  
+- data              : Combined activites for all measurements performed by all Test and Training Subject IDs  
