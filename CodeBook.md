@@ -34,7 +34,13 @@ Since the following packages are used in the R script, if they are not installed
 The raw data sets are converted into a tidy data set by the R script "run_analysis.R" through the following steps.  
 ### Downloading and unzipping data files:
 The data sets are downloaded from the give website and unzipped.  
-### Reading of data from the folders:  
-- "activitiy_labels" - Reading of 6 activitiy labels and corresponding names like "Walking", "Standing" etc  
-- measurements - Reading of the list of all features    
 
+### Reading of data from the folders:  
+- activitiy_labels  : Six activitiy labels and corresponding names like "Walking", "Standing" etc  
+- measurements      : List of all measurements  
+- subject_test      : List of Test Subject ID who performed the activities  
+- activity_test     : List of Test Activitiy Labels  
+- x_test            : Data for all activites for all measurements performed by all Test Subject IDs  
+- subject_train     : List of Training Subject ID who performed the activities  
+- activity_train    : List of Training Activitiy Labels  
+- x_train           : Data for all activites for all measurements performed by all Training Subject IDs 
